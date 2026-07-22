@@ -17,6 +17,21 @@ export default function HomePage() {
   );
 }
 
+const sliderItem: { title: string[]; img: string }[] = [
+  {
+    title: ["Building Excellenc", 'test enter'],
+    img: "1.jpg",
+  },
+  {
+    title: ["Building Excellenc", 'test enter'],
+    img: "2.jpg",
+  },
+  {
+    title: ["Building Excellenc", 'test enter'],
+    img: "3.jpg",
+  },
+];
+
 const Body = () => {
   return (
     <div className="h-screen">
@@ -26,28 +41,36 @@ const Body = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        speed={2000}
         modules={[Autoplay]}
         loop={true}
       >
-        <SwiperSlide>
-          <div className="h-screen bg-blue-400 flex items-center justify-center">
-            <img
-              src={window.location.href + "/cover.jpg"}
-              alt=""
-              className=""
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-screen bg-red-400 flex items-center justify-center">
-            <p className="">ini contoh slider</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-screen bg-green-400 flex items-center justify-center">
-            <p className="">ini contoh slider</p>
-          </div>
-        </SwiperSlide>
+        {sliderItem.map((i) => (
+          <SwiperSlide>
+            <div
+              className="h-screen flex items-center justify-center"
+              style={{
+                backgroundImage: `url(${window.location.href}/slider1/${i.img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="h-full w-full bg-black/70 flex items-center px-10 sm:px-20 xl:px-60">
+                <div className="flex flex-col border-l-8 border-white pl-5 sm:pl-10">
+                  {i.title.map((j) => (
+                    <p className="text-white text-5xl sm:text-7xl">{j}</p>
+                  ))}
+                </div>
+              </div>
+              {/* <img
+                src={window.location.href + "/cover.jpg"}
+                alt=""
+                className=""
+              /> */}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
