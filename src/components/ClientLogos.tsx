@@ -1,14 +1,15 @@
-
 const clients = [
   { name: 'Kementerian Agama', logo: 'logo KEMENAG.png' },
   { name: 'Kemendikbud', logo: 'logo KEMENDIKBUD.png' },
   { name: 'BPJPH', logo: 'logo BPJPH.png' },
   { name: 'OJK', logo: 'logo OJK.png' },
-  { name: 'TOTO', logo: 'logo TOTO.png', wide:true},
+  { name: 'TOTO', logo: 'logo TOTO.png', wide: true },
   { name: 'PUPR', logo: 'logo PUPR.png' },
-  { name: 'Heymale', logo: 'logo Heymale.png', wide:true},
-  { name: 'Heylocal', logo: 'logo Heylocal.png'},
+  { name: 'Heymale', logo: 'logo Heymale.png', wide: true },
+  { name: 'Heylocal', logo: 'logo Heylocal.png' },
 ]
+
+const MARQUEE_DURATION = 30
 
 export function ClientLogos() {
   const doubled = [...clients, ...clients]
@@ -25,16 +26,19 @@ export function ClientLogos() {
 
         {/* Running Logo */}
         <div className="w-full overflow-hidden">
-          <div className="flex animate-marquee w-max gap-[50px] px-10 items-center">
+          <div
+            className="flex animate-marquee w-max gap-[50px] px-10 items-center"
+            style={{ animationDuration: `${MARQUEE_DURATION}s` }}
+          >
             {doubled.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className={`flex shrink-0 items-center justify-center h-[120px] ${client.wide ? 'max-w-[160px]' : 'max-w-[120px]'}`}
+                className={`flex shrink-0 items-center justify-center h-[120px] overflow-hidden ${client.wide ? 'max-w-[160px]' : 'max-w-[120px]'}`}
               >
                 <img
                   src={`${window.location.href}/${client.logo}`}
                   alt={client.name}
-                  className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
+                  className="max-h-full max-w-full w-auto object-contain transition-transform duration-300 hover:scale-105"
                 />
               </div>
             ))}
