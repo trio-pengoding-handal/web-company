@@ -55,7 +55,7 @@ export function WhyChooseUs() {
       <div className="max-w-[1200px] mx-auto px-10">
         <div className="flex flex-col gap-16">
           <h2 className="font-display text-navy text-[clamp(2rem,3.5vw,2.75rem)] leading-tight font-semibold text-center max-w-[560px] mx-auto">
-            Mengapa Memilih PT G Corporation
+            Why ChooseUs Gelora Corporation
           </h2>
 
           <div className="grid md:grid-cols-3 gap-px bg-navy/8 p-px">

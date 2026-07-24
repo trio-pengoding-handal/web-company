@@ -1,21 +1,17 @@
-import logoKemenag from '../assets/logo KEMENAG.png'
-import logoKemendikbud from '../assets/logo KEMENDIKBUD.png'
-import logoBPJPH from '../assets/logo BPJPH.png'
-import logoOjk from '../assets/logo OJK.png'
-import logoTOTO from '../assets/logo TOTO.png'
-import logoPUPR from '../assets/logo PUPR.png'
 
 const clients = [
-  { name: 'Kementerian Agama', logo: logoKemenag },
-  { name: 'Kemendikbud', logo: logoKemendikbud },
-  { name: 'BPJPH', logo: logoBPJPH },
-  { name: 'OJK', logo: logoOjk },
-  { name: 'TOTO', logo: logoTOTO },
-  { name: 'PUPR', logo: logoPUPR },
+  { name: 'Kementerian Agama', logo: 'logo KEMENAG.png' },
+  { name: 'Kemendikbud', logo: 'logo KEMENDIKBUD.png' },
+  { name: 'BPJPH', logo: 'logo BPJPH.png' },
+  { name: 'OJK', logo: 'logo OJK.png' },
+  { name: 'TOTO', logo: 'logo TOTO.png', wide:true},
+  { name: 'PUPR', logo: 'logo PUPR.png' },
+  { name: 'Heymale', logo: 'logo Heymale.png', wide:true},
+  { name: 'Heylocal', logo: 'logo Heylocal.png'},
 ]
 
 export function ClientLogos() {
-  const doubled = [...clients, ...clients, ...clients, ...clients]
+  const doubled = [...clients, ...clients]
 
   return (
     <section className="bg-cream py-35 overflow-hidden">
@@ -33,10 +29,10 @@ export function ClientLogos() {
             {doubled.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="flex shrink-0 items-center justify-center h-[120px]"
+                className={`flex shrink-0 items-center justify-center h-[120px] ${client.wide ? 'max-w-[160px]' : 'max-w-[120px]'}`}
               >
                 <img
-                  src={client.logo}
+                  src={`${window.location.href}/${client.logo}`}
                   alt={client.name}
                   className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
                 />

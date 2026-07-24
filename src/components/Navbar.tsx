@@ -3,9 +3,9 @@ import { Logo } from './Logo'
 const navLinks = [
   { label: 'Beranda', href: '#beranda', active: true },
   { label: 'Tentang Kami', href: '#tentang' },
-  { label: 'Proyek', href: '#proyek' },
-  { label: 'Karier', href: '#karier' },
-  { label: 'Berita', href: '#berita' },
+  { label: 'Perusahaan', href: '#Perusahaan' },
+  { label: 'Review', href: '#Review' },
+  { label: 'Sosmed', href: '#Sosmed' },
 ]
 
 export function Navbar() {

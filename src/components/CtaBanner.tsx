@@ -25,7 +25,7 @@ export function CtaBanner() {
         </p>
         <div className="pt-6">
           <OutlineButton variant="light" href="#kontak">
-            Hubungi Tim Kami
+            Contact Us
           </OutlineButton>
         </div>
       </div>

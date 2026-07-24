@@ -60,7 +60,7 @@ export function Footer() {
               <li>
                 <p className="text-label text-sm">Alamat</p>
                 <p className="text-white/68 text-[15px]">
-                  Jakarta Selatan, Indonesia
+                  Tengerang Selatan, Indonesia
                 </p>
               </li>
             </ul>
