@@ -1,13 +1,9 @@
-import { createBrowserRouter } from "react-router";
-import App from "./App";
+import { createBrowserRouter } from 'react-router'
+import HomePage from './pages/HomePage'
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    Component: App,
+    path: '/',
+    Component: HomePage,
   },
-  {
-    path: "/test-tailwind",
-    Component: () => <p className="text-yellow-400 font-bold">test</p>,
-  },
-]);
+])
